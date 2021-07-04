@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:Server=localhost:SQLEXPRESS;Database=master;Trusted_Connection=True;",
+      "secretStore": "LocalSecretsFile"
+    }
+  }
+}

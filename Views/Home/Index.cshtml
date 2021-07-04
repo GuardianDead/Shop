@@ -1,0 +1,9 @@
+﻿@model HomeIndexViewModel
+
+@{ 
+    <h2>Фаворитные электронные машинки на сегодня</h2>
+    foreach (var item in Model.Cars)
+    {
+        @Html.Partial("AllCars",item)
+    }
+}

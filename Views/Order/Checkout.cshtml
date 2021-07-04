@@ -1,0 +1,48 @@
+﻿@model Order
+
+    <div class="row">
+        <h3>Оформление заказа</h3>
+        @*asp-controller - какой котроллер используем
+        asp-action - какой метод(страничку) мы используем 
+        method - каким типом мы отправляем значения полученные с этой HTML странички в наш контроллер*@
+        <form asp-action="Checkout" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label asp-for="name"></label>
+                <div class="col-md-5">
+                    @*asp-for - указываем какую переменную она должна принимать из model Order*@
+                    <input asp-for="name" class="form-control" />
+                    @*asp-validation-for="name" - какую переменную проверяем в модели на ее там определенную ошибку*@
+                    <span asp-validation-for="name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="surname"></label>
+                <div class="col-md-5">
+                    <input asp-for="surname" class="form-control" />
+                    <span asp-validation-for="surname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="adress"></label>
+                <div class="col-md-5">
+                    <input asp-for="adress" class="form-control" />
+                    <span asp-validation-for="adress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone"></label>
+                <div class="col-md-5">
+                    <input asp-for="phone" class="form-control" />
+                    <span asp-validation-for="phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="email"></label>
+                <div class="col-md-5">
+                    <input asp-for="email" class="form-control" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+            </div>
+            <input class="btn btn-success" type="submit" value="Завершить заказ"/>
+        </form>
+    </div>

@@ -1,0 +1,13 @@
+﻿@model ShopCartViewModel
+
+<div>
+    @*Мы не знаем че будим крутить и какие предметы получим поэтому var*@
+    @foreach (var item in Model.ShopCart.ListShopsItems)
+    {
+    <div>
+        <h4>Название авто: @item.Car.DescCar</h4>
+    </div>
+    }
+    <hr />
+    <a class="btn btn-danger" asp-controller="Order" asp-action="Checkout">Оплатить</a>
+</div> 

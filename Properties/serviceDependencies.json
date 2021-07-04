@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:Server=localhost:SQLEXPRESS;Database=master;Trusted_Connection=True;"
+    }
+  }
+}

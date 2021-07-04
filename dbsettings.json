@@ -1,0 +1,7 @@
+{
+  "ConnectionStrings": 
+  {
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=MyFirstMvcDb;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "IdentityDBConnection": "Server=localhost\\SQLEXPRESS;Database=IdentityDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
