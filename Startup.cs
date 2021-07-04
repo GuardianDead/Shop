@@ -24,11 +24,18 @@ namespace Shop
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddWordPress(options =>
+            {
+                options.DbHost = "localhost";
+                options.DbName = "shop_wordpress";
+                options.DbUser = "root";
+                options.DbPassword = "";
+                options.DbTablePrefix = "wp_";
+            });
+
             services.AddDbContext<AppDBContent>(o => o.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            
             services.AddMvcCore(option => option.EnableEndpointRouting = false).AddRazorViewEngine(); //option => option.EnableEndpointRouting=false 
                                                                                                       //.AddRazorViewEngine()
-
 
             services.AddDbContext<AppDBIdentity>(o => o.UseSqlServer(configuration.GetConnectionString("IdentityDBConnection")));
             services.AddDefaultIdentity<IdentityUser>(opt =>
@@ -63,6 +70,8 @@ namespace Shop
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseWordPress();
 
             app.UseSession();
             app.UseStaticFiles();
