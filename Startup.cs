@@ -10,6 +10,7 @@ using Shop.Data;
 using Shop.Data.Interfaces;
 using Shop.Data.Models;
 using Shop.Data.Repository;
+using Shop.Services;
 
 namespace Shop
 {
@@ -24,15 +25,16 @@ namespace Shop
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddWordPress(options =>
-            {
-                options.DbHost = "localhost";
-                options.DbName = "shop_wordpress";
-                options.DbUser = "root";
-                options.DbPassword = "";
-                options.DbTablePrefix = "wp_";
-            });
+            //services.AddWordPress(options =>
+            //{
+            //    options.DbHost = "localhost";
+            //    options.DbName = "shop_wordpress";
+            //    options.DbUser = "root";
+            //    options.DbPassword = "";
+            //    options.DbTablePrefix = "wp_";
+            //});
 
+            //services.AddHostedService<WarningBackgroundService>();
             services.AddDbContext<AppDBContent>(o => o.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddMvcCore(option => option.EnableEndpointRouting = false).AddRazorViewEngine(); //option => option.EnableEndpointRouting=false 
                                                                                                       //.AddRazorViewEngine()
@@ -71,7 +73,7 @@ namespace Shop
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseWordPress();
+            //app.UseWordPress();
 
             app.UseSession();
             app.UseStaticFiles();
